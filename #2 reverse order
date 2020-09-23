@@ -1,0 +1,15 @@
+public String reverseString(String input) {
+    
+    return new StringBuilder(input).reverse().toString();
+    
+    char[] ch = input.toCharArray();  
+    char[] res = new char[input.length()];
+    
+    for (int i = 0; i < input.length(); i++) {
+      res[i] = ch[input.length() - 1 -i ];
+    
+    }  
+    return new String(res);
+  
+  }
+
