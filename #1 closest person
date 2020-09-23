@@ -18,3 +18,53 @@ class Solution {
     System.out.println(result.name);
     
   }
+ public Person getTheCloestPerson(List<Person> input, Person target){
+    int minDis = 100000000;
+    
+    int x0 = target.location[0];
+    int y0 = target.location[1];
+    
+    Person res = input.get(0);
+    
+    for(Person person : input) {
+      if(person.name.equals(target.name)) {
+        continue;
+      }
+      
+      
+      int x = person.location[0];
+      int y = person.location[1];
+      
+      int distance = (x0 - x) * (x0 - x) + (y0 - y) * (y0 - y);
+        
+      if ( distance < minDis){
+        minDis = distance;
+        res = person;  
+      }
+    }
+    
+    
+    return res;
+  }
+  
+}
+
+
+
+class Person {
+  String name;
+  String birthday;
+  int[] location;
+  String address;
+  
+  public Person(
+    String name, 
+    String birthday,
+    int[] location,
+    String address) {
+    this.name = name;
+    this.birthday = birthday;
+    this.location = location;
+    this.address = address;
+  }
+}
