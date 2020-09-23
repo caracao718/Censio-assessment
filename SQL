@@ -1,0 +1,39 @@
+SELECT e.first_name, e.last_name, e.salary,
+  d.name as department_name
+FROM employees   AS e
+JOIN departments AS d ON e.department_id = d.id;
+
+
+
+Q1
+
+SELECT * 
+FROM LoveCouch
+Where time_posted > current_time - 24h
+
+
+Q2
+
+
+SELECT COUNT(*), topic
+FROM LoveCouch
+GROUP BY topic;
+
+
+Q3
+
+SELECT * 
+FROM LoveCouch
+Where 
+is_anonymous = true and 
+time_posted > current_time - 1w
+ORDER BY time_posted
+
+
+Q4
+
+
+SELECT * 
+FROM LoveCouch
+WHERE body LIKE '%Love%'
+
